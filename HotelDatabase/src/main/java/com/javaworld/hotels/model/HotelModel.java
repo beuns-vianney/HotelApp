@@ -20,50 +20,45 @@ import com.javaworld.hotels.businessobjects.Hotel;
  * 
  * @author jfsmart
  *
- * A simple class providing lookup services for a Hotel database.
+ *         A simple class providing lookup services for a Hotel database.
  */
 public class HotelModel {
 
 	/**
 	 * The list of all known cities in the database.
 	 */
-	private static String[] cities =
-	{
-		"Paris",
-		"London",
-	};
-	
+	private static String[] cities = { "Paris", "London", };
+
 	/**
 	 * The list of all hotels in the database.
 	 */
-	private static Hotel[] hotels = {
-		new Hotel("Hotel Latin","Quartier latin","Paris",3),
-		new Hotel("Hotel Etoile","Place de l'Etoile","Paris",4),
-		new Hotel("Hotel Vendome","Place Vendome","Paris",5),
-		new Hotel("Hotel Hilton","Trafalgar Square","London",4),
-		new Hotel("Hotel Ibis","The City","London",3),
-		new Hotel("Hotel Cigogne","Grand place","",2),
-	};
-	
+	private static Hotel[] hotels = { new Hotel("Hotel Latin", "Quartier latin", "Paris", 3),
+			new Hotel("Hotel Etoile", "Place de l'Etoile", "Paris", 4),
+			new Hotel("Hotel Vendome", "Place Vendome", "Paris", 5),
+			new Hotel("Hotel Hilton", "Trafalgar Square", "London", 4),
+			new Hotel("Hotel Ibis", "The City", "London", 3), new Hotel("Hotel Cigogne", "Grand place", "Paris", 2), };
+
 	/**
 	 * Returns the hotels in a given city.
+	 * 
 	 * @param city the name of the city
 	 * @return a list of Hotel objects
 	 */
-	public List<Hotel> findHotelsByCity(String city){
+	public List<Hotel> findHotelsByCity(String city) {
 		List<Hotel> hotelsFound = new ArrayList<Hotel>();
-		
-		for(Hotel hotel : hotels) {
+
+		for (Hotel hotel : hotels) {
 			if (hotel.getCity().equalsIgnoreCase(city)) {
 				hotelsFound.add(hotel);
 			}
 		}
-		
+
 		return hotelsFound;
-	}	
-	
+	}
+
 	/**
-	 * Returns the list of cities in the database which have a hotel. 
+	 * Returns the list of cities in the database which have a hotel.
+	 * 
 	 * @return a list of city names
 	 */
 	public String[] findAvailableCities() {
